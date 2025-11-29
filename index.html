@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خارطة طريق حلواني خير - الحل النهائي للتجاوب</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* تعريف الخطوط والستايل الأساسي */
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f0f4f8; 
+            color: #1f2937;
+            overflow-x: hidden;
+            position: relative;
+        }
+        .container {
+            max-width: 1300px;
+        }
+        
+        /* تأثير الخلفية الكروي الداكن */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%; 
+            height: 100vh;
+            background: radial-gradient(circle at center, #1e3a8a 0%, #0c2340 50%, rgba(30, 58, 138, 0) 70%);
+            opacity: 0.05; 
+            z-index: -1;
+        }
+
+        /* تصميم الـ Header */
+        .header-bg {
+            background: #1e3a8a; 
+            box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+            animation: header-slide-down 1.2s ease-out;
+        }
+        
+        /* أنيميشن: نزول الرأس */
+        @keyframes header-slide-down {
+            from { opacity: 0; transform: translateY(-100%); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* تصميم الكارد الفاخر */
+        .card {
+            background-color: white;
+            border-radius: 24px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            padding: 25px; 
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid transparent; 
+            
+            /* أنيميشن عند الـ Hover */
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, border-bottom 0.4s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px) scale(1.03); 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            border-bottom-color: #facc15; 
+        }
+
+        /* تصميم الأيقونات (اللون الذهبي والأسود) */
+        .icon-box {
+            background-color: #facc15; 
+            padding: 20px; 
+            border-radius: 50%;
+            margin-bottom: 20px;
+            flex-shrink: 0;
+            box-shadow: 0 0 0 8px rgba(250, 204, 21, 0.2); 
+        }
+        .icon-xl-svg {
+            width: 45px; 
+            height: 45px;
+            stroke-width: 1.8; 
+            stroke: #0c2340; 
+            fill: none;
+        }
+        
+        /* ستايل الخط الكبير الملخص (تجاوبي) */
+        .summary-text {
+            color: #374151; 
+            font-size: 1.2rem; 
+            font-weight: 900; 
+            line-height: 1.6;
+        }
+        @media (min-width: 768px) { 
+            .summary-text {
+                font-size: 1.7rem; 
+                line-height: 1.8;
+            }
+            .card {
+                 padding: 45px;
+            }
+        }
+        
+        .highlight {
+            font-weight: 900;
+            color: #1e3a8a; 
+            text-shadow: 0.5px 0.5px #facc15;
+        }
+        
+        /* أنيميشن خاص لقسم الـ AI للتأكيد على السرعة والتميز */
+        .ai-card {
+            background: linear-gradient(145deg, #fef2ff 0%, #fae6f4 100%); 
+            border-top: 6px solid #ef4444;
+            box-shadow: 0 15px 45px rgba(239, 68, 68, 0.4);
+            animation: ai-pulse 2s infinite;
+            /* إضافة Flexbox هنا لحل مشكلة الترتيب والتداخل */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* توزيع العناصر بالتساوي */
+        }
+        .ai-card:hover {
+            transform: translateY(-10px) scale(1.05) !important;
+        }
+
+        @keyframes ai-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); } 
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+        }
+
+        /* ستايل جديد لـ 30 ثانية لضمان التجاوب وعدم التداخل */
+        .ai-speed-highlight-container {
+            display: flex;
+            flex-direction: column; /* جعل "الإبداع والسرعة" و "30 ثانية" في سطرين منفصلين */
+            align-items: center;
+            gap: 10px; /* مسافة بين النص والـ 30 ثانية */
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #ffcccc; /* خط فاصل بسيط */
+        }
+
+        .ai-speed-highlight-text {
+            font-size: 1.1rem; /* حجم خط مناسب للهاتف */
+            font-weight: 800;
+            color: #374151;
+            line-height: 1.4;
+        }
+        .ai-speed-highlight-value {
+            background-color: #ef4444; 
+            color: white;
+            padding: 10px 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-size: 2rem; /* حجم كبير وواضح لكن مناسب للموبايل */
+            font-weight: 900;
+        }
+
+        @media (min-width: 768px) {
+            .ai-speed-highlight-text {
+                font-size: 1.5rem; /* حجم أكبر على الشاشات الكبيرة */
+            }
+            .ai-speed-highlight-value {
+                padding: 15px 30px;
+                font-size: 2.5rem; /* حجم أكبر على الشاشات الكبيرة */
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    
+    
+
+<header class="header-bg p-8 md:p-16 mb-12 md:mb-20 text-center">
+        <div class="container mx-auto text-white">
+            <h1 class="text-5xl md:text-8xl lg:text-9xl font-black mb-4" style="color: #facc15; letter-spacing: 2px;">حلواني خير</h1>
+            <p class="text-xl md:text-3xl font-light opacity-90 mt-5">ملخص تنفيذي فائق الفخامة لخارطة الطريق الرقمية</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-10">
+
+        <!-- الشبكة: عمود واحد على الموبايل، وعمودين على المتوسط، وثلاثة على الكبير --><section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            
+            <!-- 1. الموقع (المتجر) --><div class="card" data-aos="zoom-in" data-aos-easing="ease-out-back" data-aos-duration="1200" data-aos-once="true">
+                <div class="icon-box">
+                    <!-- SVG Icon: Store / متجر (Line Art) --><svg class="icon-xl-svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M0 0h24v24H0z" stroke="none"></path>
+                        <path d="M12 18H5a2 2 0 01-2-2V4a2 2 0 012-2h14a2 2 0 012 2v12a2 2 0 01-2 2h-7"></path>
+                        <path d="M5 22v-4"></path>
+                        <path d="M19 22v-4"></path>
+                        <path d="M9 13v-3"></path>
+                        <path d="M15 13v-3"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-indigo-800 mb-4">المتجر الإلكتروني</h3>
+                <p class="summary-text">
+                    الوجهة الأساسية: <span class="highlight">عرض المنتجات بالصور والأسعار</span>، وإبراز <span class="highlight">العروض والتخفيضات</span> الحصرية للمتجر.
+                </p>
+            </div>
+
+            <!-- 2. واتساب (الطلب المباشر) --><div class="card" data-aos="flip-up" data-aos-duration="1200" data-aos-delay="200" data-aos-once="true">
+                <div class="icon-box">
+                    <!-- SVG Icon: Message / رسالة (Line Art) --><svg class="icon-xl-svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M0 0h24v24H0z" stroke="none"></path>
+                        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-green-700 mb-4">قناة واتساب للطلب</h3>
+                <p class="summary-text">
+                    الواتساب هو <span class="highlight text-green-700">القناة المباشرة للتواصل</span>، حيث يمكن للعميل <span class="highlight text-green-700">طلب ما يحتاجه مباشرة</span> بضغطة زر.
+                </p>
+            </div>
+            
+            <!-- 3. الدعم الفني (زر الإبلاغ) --><div class="card" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="400" data-aos-once="true">
+                <div class="icon-box">
+                    <!-- SVG Icon: Support / دعم (Line Art) --><svg class="icon-xl-svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M0 0h24v24H0z" stroke="none"></path>
+                        <path d="M3 21v-4a4 4 0 014-4h10a4 4 0 014 4v4"></path>
+                        <path d="M11 7h2"></path>
+                        <path d="M12 11V3"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-yellow-700 mb-4">الدعم الفوري والمكالمات</h3>
+                <p class="summary-text">
+                    زر <span class="highlight text-yellow-700">الدعم والإبلاغ</span> يفتح <span class="highlight text-yellow-700">مكالمة هاتفية فورية</span> مع فريق العمل للمساعدة السريعة.
+                </p>
+            </div>
+
+            <!-- 4. مواقع التواصل (النشر) --><div class="card" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="600" data-aos-once="true">
+                <div class="icon-box">
+                    <!-- SVG Icon: Share / مشاركة (Line Art) --><svg class="icon-xl-svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M0 0h24v24H0z" stroke="none"></path>
+                        <circle cx="18" cy="5" r="3"></circle>
+                        <circle cx="6" cy="12" r="3"></circle>
+                        <circle cx="18" cy="19" r="3"></circle>
+                        <path d="M8.59 13.51l6.83 3.48"></path>
+                        <path d="M8.59 10.49l6.83-3.48"></path>
+                    </svg>
+                </div>
+                <h3 class="text-2xl md:text-3xl font-extrabold text-cyan-700 mb-4">منصات التواصل والنشر</h3>
+                <p class="summary-text">
+                    تمكين <span class="highlight text-cyan-700">نشر المحتوى ومشاركته</span> على جميع المنصات الاجتماعية بفاعلية، وربط جميع الحسابات.
+                </p>
+            </div>
+            
+            <!-- 5. الذكاء الاصطناعي (AI) - البطاقة الأكبر والأكثر تميزاً --><div class="card md:col-span-2 lg:col-span-2 ai-card" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="800" data-aos-once="true">
+                <div class="icon-box" style="background-color: white; box-shadow: 0 0 0 10px rgba(239, 68, 68, 0.2);">
+                    <!-- SVG Icon: AI / ذكاء اصطناعي (Line Art) --><svg class="icon-xl-svg" viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" style="stroke: #ef4444;">
+                        <path d="M0 0h24v24H0z" stroke="none"></path>
+                        <path d="M9 5h6a2 2 0 012 2v10a2 2 0 01-2 2H9a2 2 0 01-2-2V7a2 2 0 012-2z"></path>
+                        <path d="M12 15h.01M12 18v.01"></path>
+                        <path d="M12 12V3"></path>
+                        <path d="M12 3l-3 3"></path>
+                        <path d="M12 3l3 3"></path>
+                    </svg>
+                </div>
+                <h3 class="text-3xl md:text-4xl font-extrabold text-red-600 mb-6">قوة الذكاء الاصطناعي (AI) للنشر التلقائي</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 w-full">
+                    <p class="summary-text text-left text-red-800">
+                        مهمة الـ AI: <span class="highlight text-red-800">تحويل صور المنتجات لفيديو احترافي</span> كامل مع صوت ومونتاج آلي.
+                    </p>
+                    <p class="summary-text text-left text-red-800">
+                        الإنتاج: <span class="highlight text-red-800">نشر تلقائي لفيديو يومي</span> (30 فيديو شهرياً) على أهم المنصات.
+                    </p>
+                    <!-- استخدام هيكل جديد لضمان عدم التداخل --><div class="md:col-span-2 text-center ai-speed-highlight-container">
+                        <p class="ai-speed-highlight-text">الإبداع والسرعة: ينجز الفيديو بالكامل في </p>
+                        <span class="ai-speed-highlight-value font-black">30 ثانية فقط!</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    
+
+<footer class="mt-16 md:mt-20 p-8 md:p-10 text-center text-xl md:text-2xl font-black text-white bg-gray-800 shadow-inner">
+        **حلواني خير: رؤية رقمية بلمسة من الفخامة والتجاوب الكامل.**
+    </footer>
+
+    
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            easing: 'ease-in-out-back', 
+            once: true, 
+            mirror: false 
+        });
+    </script>
+
+</body>
+</html>
